@@ -82,7 +82,7 @@ const RecruiterLogin = () => {
 
     try {
       if (state === "Login") {
-        const { data } = await axios.post("http://localhost:5000/api/company/login", {
+        const { data } = await axios.post(backendUrl + "/api/company/login", {
           email,
           password,
         });
@@ -108,7 +108,10 @@ const RecruiterLogin = () => {
           formData.append("image", image);
         }
 
-        const { data } = await axios.post( "http://localhost:5000/api/company/register",formData);
+        const { data } = await axios.post(
+          backendUrl + "/api/company/register",
+          formData
+        );
         
         if (data.success) {
           setCompanyData(data.company);

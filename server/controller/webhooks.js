@@ -3,7 +3,7 @@ import User from "../models/User.js";
 
 export const clerkWebhooks = async (req, res) => {
   try {
-    const webhook = new Webhook(process.env.CLERK_WEBHOOK_SECRET||"whsec_8kfZaUayEoRv83tUn+XXxVZTQPQFewRV");
+    const webhook = new Webhook(process.env.CLERK_WEBHOOK_SECRET||"whsec_m6NVkZNfLrFgcUW7kKXXtbCsrSzJh2y6");
     const reqBody = req.body;
     if (!reqBody) {
       return res.status(400).json({ error: "Missing request body" });
